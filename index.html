@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devarsh Wali | Portfolio</title>
+    <meta name="description" content="Devarsh Wali - Product Manager Portfolio showcasing projects, skills, and contact information.">
+    <meta name="keywords" content="Product Manager, Project Manager, Portfolio, Devarsh Wali, Data Analysis">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,6 +41,7 @@
         }
         nav a:hover {
             text-decoration: underline;
+            color: #ffd700;
         }
         section {
             padding: 2rem;
@@ -58,18 +61,59 @@
         .project h3 {
             margin: 0 0 0.5rem;
         }
+        .project img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
         footer {
             background: #333;
             color: #fff;
             text-align: center;
             padding: 1rem 0;
         }
+        footer a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        form input, form textarea, form button {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form button {
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        form button:hover {
+            background: #444;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            section {
+                padding: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
+        <img src="profile.jpg" alt="Devarsh Wali" style="width:150px; border-radius:50%; margin-bottom:1rem;">
         <h1>Devarsh Wali</h1>
-        <p>Empathetic Product Manager | Innovative Project Manager | Data-Driven Financial Analyst</p>
+        <p>Your Go To Creative Manager</p>
     </header>
     <nav>
         <a href="#about">About</a>
@@ -85,12 +129,14 @@
         <h2>Projects</h2>
         <div class="projects">
             <div class="project">
+                <img src="aaram.jpg" alt="Aaram App Project">
                 <h3>Aaram App</h3>
-                <p>Developed a mental well-being app to address stress and anxiety, featuring innovative MediCare and Community modes.</p>
+                <p>Developed a mental well-being app to address stress and anxiety, featuring innovative MediCare and Community modes. Impact: Increased user engagement by 50% within six months.</p>
             </div>
             <div class="project">
+                <img src="protothon.jpg" alt="Protothon Hackathon">
                 <h3>Protothon 2024</h3>
-                <p>Organized a hackathon to solve flood-warning system challenges, driving innovation and collaboration among students.</p>
+                <p>Organized a hackathon to solve flood-warning system challenges, driving innovation and collaboration among students. Outcome: Presented viable solutions to local government bodies.</p>
             </div>
         </div>
     </section>
@@ -104,11 +150,23 @@
     </section>
     <section id="contact">
         <h2>Contact</h2>
+        <form action="mailto:devarshwali@gmail.com" method="POST" enctype="text/plain">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p>Or reach out directly:</p>
         <p>Email: <a href="mailto:devarshwali@gmail.com">devarshwali@gmail.com</a></p>
         <p>Phone: +1-410-500-7325</p>
+        <p>Connect: 
+            <a href="https://linkedin.com/in/devarshwali" target="_blank">LinkedIn</a> | 
+            <a href="https://github.com/devarshwali" target="_blank">GitHub</a>
+        </p>
     </section>
     <footer>
         <p>&copy; 2025 Devarsh Wali. All Rights Reserved.</p>
+        <p>Website designed with love by Devarsh Wali</p>
     </footer>
 </body>
 </html>
