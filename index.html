@@ -14,22 +14,23 @@
             color: #333;
             scroll-behavior: smooth;
         }
+
         header {
             background: linear-gradient(to right, #ff416c, #ff4b2b);
             color: #fff;
             padding: 2em;
             text-align: center;
-            position: relative;
         }
+
         header h1 {
             font-size: 2.8em;
             margin: 0;
-            animation: fadeInDown 1.5s ease;
         }
+
         header p {
             font-size: 1.2em;
-            animation: fadeInUp 1.5s ease;
         }
+
         nav {
             display: flex;
             justify-content: center;
@@ -39,6 +40,7 @@
             top: 0;
             z-index: 1000;
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
@@ -46,9 +48,11 @@
             font-size: 1em;
             transition: color 0.3s;
         }
+
         nav a:hover {
             color: #ff4b2b;
         }
+
         section {
             padding: 2em;
             max-width: 1200px;
@@ -57,22 +61,23 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         .hero {
             text-align: center;
             background: url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
             color: white;
             padding: 4em 0;
-            position: relative;
         }
+
         .hero h1 {
             font-size: 3em;
             margin-bottom: 0.5em;
-            color: #ff4b2b; /* Updated text color */
         }
+
         .hero p {
             font-size: 1.2em;
-            color: #f4f4f9; /* Updated text color */
         }
+
         .btn {
             display: inline-block;
             background: #ff4b2b;
@@ -84,13 +89,16 @@
             margin-top: 1em;
             transition: background 0.3s;
         }
+
         .btn:hover {
             background: #ff6c5b;
         }
+
         .timeline {
             position: relative;
             padding: 2em 0;
         }
+
         .timeline::after {
             content: '';
             position: absolute;
@@ -101,6 +109,7 @@
             left: 50%;
             margin-left: -2px;
         }
+
         .timeline-item {
             position: relative;
             margin: 1.5em 0;
@@ -109,24 +118,28 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             width: 45%;
-            animation: fadeIn 1.2s ease;
         }
+
         .timeline-item:nth-child(odd) {
             left: -50%;
             transform: translateX(50%);
         }
+
         .timeline-item:nth-child(even) {
             left: 50%;
             transform: translateX(-50%);
         }
+
         .timeline-item h3 {
             font-size: 1.2em;
             margin-bottom: 0.5em;
         }
+
         .timeline-item p {
             margin: 0;
             font-size: 0.9em;
         }
+
         .timeline-item .icon {
             width: 30px;
             height: 30px;
@@ -141,112 +154,80 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
+
         footer {
             text-align: center;
             background: #333;
             color: white;
             padding: 1.5em 0;
         }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Devarsh Wali</h1>
-        <p>Product Manager | Innovator | Problem Solver</p>
-    </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <section class="hero">
-        <h1 id="typing-effect"></h1>
-        <p>Empowering businesses through innovative product management solutions.</p>
-        <a href="#contact" class="btn">Get in Touch</a>
-    </section>
-    <section id="education" class="timeline">
-        <h2>Education</h2>
-        <div class="timeline-item">
-            <div class="icon">🎓</div>
-            <h3>Master's Degree</h3>
-            <p>University of Maryland, Baltimore County</p>
-            <p>2024 - 2025</p>
-        </div>
-        <div class="timeline-item">
-            <div class="icon">🎓</div>
-            <h3>Bachelor's Degree</h3>
-            <p>PVG's College of Engineering and Technology, Pune</p>
-            <p>2016 - 2021</p>
-        </div>
-    </section>
-    <footer>
-        <p>&copy; 2025 Devarsh Wali. All Rights Reserved.</p>
-    </footer>
-    <script>
-        // Typing effect for the hero section
-        const typingElement = document.getElementById('typing-effect');
-        const phrases = ["Hello, I'm Devarsh Wali", "Product Manager", "Innovator"];
-        let phraseIndex = 0;
-        let letterIndex = 0;
-        const typingSpeed = 150;
-        const erasingSpeed = 100;
-        const delayBetweenPhrases = 2000;
+<header>
+    <h1>Devarsh Wali</h1>
+    <p>Product Manager | Innovator | Problem Solver</p>
+</header>
+<nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+</nav>
+<section class="hero">
+    <h1 id="typing-effect"></h1>
+    <p>Empowering businesses through innovative product management solutions.</p>
+    <a href="#contact" class="btn">Get In Touch</a>
+</section>
+<section id="education" class="timeline">
+    <h2>Education</h2>
+    <div class="timeline-item">
+        <div class="icon">🎓</div>
+        <h3>Master's Degree</h3>
+        <p>University of Maryland, Baltimore County</p>
+        <p>2024 - 2025</p>
+    </div>
+    <div class="timeline-item">
+        <div class="icon">🎓</div>
+        <h3>Bachelor's Degree</h3>
+        <p>PVG's College of Engineering and Technology, Pune</p>
+        <p>2016 - 2021</p>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2025 Devarsh Wali. All Rights Reserved.</p>
+</footer>
+<script>
+    const typingElement = document.getElementById('typing-effect');
+    const phrases = ["Hello, I'm Devarsh Wali", "Product Manager", "Innovator"];
+    let phraseIndex = 0;
+    let letterIndex = 0;
+    const typingSpeed = 150;
+    const erasingSpeed = 100;
+    const delayBetweenPhrases = 2000;
 
-        function typePhrase() {
-            if (letterIndex < phrases[phraseIndex].length) {
-                typingElement.textContent += phrases[phraseIndex][letterIndex];
-                letterIndex++;
-                setTimeout(typePhrase, typingSpeed);
-            } else {
-                setTimeout(erasePhrase, delayBetweenPhrases);
-            }
+    function typePhrase() {
+        if (letterIndex < phrases[phraseIndex].length) {
+            typingElement.textContent += phrases[phraseIndex][letterIndex];
+            letterIndex++;
+            setTimeout(typePhrase, typingSpeed);
+        } else {
+            setTimeout(erasePhrase, delayBetweenPhrases);
         }
+    }
 
-        function erasePhrase() {
-            if (letterIndex > 0) {
-                typingElement.textContent = phrases[phraseIndex].substring(0, letterIndex - 1);
-                letterIndex--;
-                setTimeout(erasePhrase, erasingSpeed);
-            } else {
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                setTimeout(typePhrase, typingSpeed);
-            }
+    function erasePhrase() {
+        if (letterIndex > 0) {
+            typingElement.textContent = phrases[phraseIndex].substring(0, letterIndex - 1);
+            letterIndex--;
+            setTimeout(erasePhrase, erasingSpeed);
+        } else {
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            setTimeout(typePhrase, typingSpeed);
         }
+    }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            typePhrase();
-        });
-    </script>
+    document.addEventListener('DOMContentLoaded', typePhrase);
+</script>
 </body>
 </html>
