@@ -3,170 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devarsh Wali | Portfolio</title>
-    <meta name="description" content="Devarsh Wali - Product Manager Portfolio showcasing projects, skills, and contact information.">
-    <meta name="keywords" content="Product Manager, Project Manager, Portfolio, Devarsh Wali, Data Analysis">
+    <title>Devarsh Wali Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f4f4f9;
             color: #333;
+            scroll-behavior: smooth;
         }
         header {
-            background: #333;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
             color: #fff;
-            padding: 1rem 0;
+            padding: 2em;
             text-align: center;
+            position: relative;
         }
         header h1 {
+            font-size: 2.8em;
             margin: 0;
-            font-size: 2.5rem;
+            animation: fadeInDown 1.5s ease;
         }
         header p {
-            margin: 0;
-            font-size: 1rem;
+            font-size: 1.2em;
+            animation: fadeInUp 1.5s ease;
         }
         nav {
             display: flex;
             justify-content: center;
-            background: #444;
-            padding: 0.5rem 0;
+            background: #333;
+            padding: 1em 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             color: #fff;
-            margin: 0 1rem;
             text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+            transition: color 0.3s;
         }
         nav a:hover {
-            text-decoration: underline;
-            color: #ffd700;
+            color: #ff4b2b;
         }
         section {
-            padding: 2rem;
-            max-width: 800px;
-            margin: auto;
-        }
-        .projects, .skills {
-            margin: 2rem 0;
-        }
-        .project {
+            padding: 2em;
+            max-width: 1200px;
+            margin: 2em auto;
             background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 1rem;
-            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-        .project h3 {
-            margin: 0 0 0.5rem;
+        .hero {
+            text-align: center;
+            background: url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
+            color: white;
+            padding: 4em 0;
+            position: relative;
         }
-        .project img {
-            max-width: 100%;
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+        .hero p {
+            font-size: 1.2em;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff4b2b;
+            color: white;
+            padding: 0.8em 1.5em;
             border-radius: 5px;
-            margin-bottom: 0.5rem;
+            text-decoration: none;
+            font-size: 1em;
+            margin-top: 1em;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #ff6c5b;
+        }
+        .timeline {
+            position: relative;
+            padding: 2em 0;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #ff4b2b;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin: 1.5em 0;
+            padding: 1.2em;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            animation: fadeIn 1.2s ease;
+        }
+        .timeline-item:nth-child(odd) {
+            left: -50%;
+            transform: translateX(50%);
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .timeline-item h3 {
+            font-size: 1.2em;
+            margin-bottom: 0.5em;
+        }
+        .timeline-item p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        .timeline-item .icon {
+            width: 30px;
+            height: 30px;
+            background: #ff4b2b;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
         footer {
-            background: #333;
-            color: #fff;
             text-align: center;
-            padding: 1rem 0;
-        }
-        footer a {
-            color: #ffd700;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        form input, form textarea, form button {
-            padding: 0.5rem;
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        form button {
             background: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
+            color: white;
+            padding: 1.5em 0;
         }
-        form button:hover {
-            background: #444;
-        }
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
             }
-            section {
-                padding: 1rem;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
 </head>
 <body>
     <header>
-    <img src="./devarsh-photo.jpg" alt="Devarsh Wali" style="width:150px; border-radius:50%; margin-bottom:1rem;">
-    <h1>Devarsh Wali</h1>
-    <p>Your Go-To Creative Leader for Leading Projects and Shipping Products</p>
-</header>
+        <h1>Devarsh Wali</h1>
+        <p>Product Manager | Innovator | Problem Solver</p>
+    </header>
     <nav>
         <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
     </nav>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm Devarsh Wali, a passionate and innovative professional with expertise in product management, project management, and financial analysis. With hands-on experience and a strong educational background, I strive to create impactful solutions and drive meaningful change.</p>
+    <section class="hero">
+        <h1 id="typing-effect"></h1>
+        <p>Empowering businesses through innovative product management solutions.</p>
+        <a href="#contact" class="btn">Get in Touch</a>
     </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects">
-            <div class="project">
-                <img src="aaram.jpg" alt="Aaram App Project">
-                <h3>Aaram App</h3>
-                <p>Developed a mental well-being app to address stress and anxiety, featuring innovative MediCare and Community modes. Impact: Increased user engagement by 50% within six months.</p>
-            </div>
-            <div class="project">
-                <img src="protothon.jpg" alt="Protothon Hackathon">
-                <h3>Protothon 2024</h3>
-                <p>Organized a hackathon to solve flood-warning system challenges, driving innovation and collaboration among students. Outcome: Presented viable solutions to local government bodies.</p>
-            </div>
+    <section id="education" class="timeline">
+        <h2>Education</h2>
+        <div class="timeline-item">
+            <div class="icon">🎓</div>
+            <h3>Master's Degree</h3>
+            <p>University of Maryland, Baltimore County</p>
+            <p>2024 - 2025</p>
         </div>
-    </section>
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>Product Management: JIRA, Confluence, Figma</li>
-            <li>Data Analysis: SQL, Tableau, Power BI, Excel</li>
-            <li>Project Management: Agile, Scrum, Lean Six Sigma</li>
-        </ul>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <form action="mailto:devarshwali@gmail.com" method="POST" enctype="text/plain">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        <p>Or reach out directly:</p>
-        <p>Email: <a href="mailto:devarshwali@gmail.com">devarshwali@gmail.com</a></p>
-        <p>Phone: +1-410-500-7325</p>
-        <p>Connect: 
-            <a href="https://linkedin.com/in/devarshwali" target="_blank">LinkedIn</a> | 
-            <a href="https://github.com/devarshwali" target="_blank">GitHub</a>
-        </p>
+        <div class="timeline-item">
+            <div class="icon">🎓</div>
+            <h3>Bachelor's Degree</h3>
+            <p>PVG's College of Engineering and Technology, Pune</p>
+            <p>2016 - 2021</p>
+        </div>
     </section>
     <footer>
         <p>&copy; 2025 Devarsh Wali. All Rights Reserved.</p>
-        <p>Website designed with love by Devarsh Wali</p>
     </footer>
+    <script>
+        // Typing effect for the hero section
+        const typingElement = document.getElementById('typing-effect');
+        const phrases = ["Hello, I'm Devarsh Wali", "Product Manager", "Innovator"];
+        let phraseIndex = 0;
+        let letterIndex = 0;
+        const typingSpeed = 150;
+        const erasingSpeed = 100;
+        const delayBetweenPhrases = 2000;
+
+        function typePhrase() {
+            if (letterIndex < phrases[phraseIndex].length) {
+                typingElement.textContent += phrases[phraseIndex][letterIndex];
+                letterIndex++;
+                setTimeout(typePhrase, typingSpeed);
+            } else {
+                setTimeout(erasePhrase, delayBetweenPhrases);
+            }
+        }
+
+        function erasePhrase() {
+            if (letterIndex > 0) {
+                typingElement.textContent = phrases[phraseIndex].substring(0, letterIndex - 1);
+                letterIndex--;
+                setTimeout(erasePhrase, erasingSpeed);
+            } else {
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                setTimeout(typePhrase, typingSpeed);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            typePhrase();
+        });
+    </script>
 </body>
 </html>
