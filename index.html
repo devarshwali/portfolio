@@ -4,43 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Devarsh Wali Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: #000;
+            color: #fff;
             scroll-behavior: smooth;
         }
-
         header {
             background: linear-gradient(to right, #ff416c, #ff4b2b);
-            color: #fff;
-            padding: 2em;
+            padding: 1em 0;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-
         header h1 {
-            font-size: 2.8em;
             margin: 0;
+            font-size: 2em;
+            color: #fff;
         }
-
-        header p {
-            font-size: 1.2em;
-        }
-
         nav {
             display: flex;
             justify-content: center;
             background: #333;
             padding: 1em 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
-
         nav a {
             color: #fff;
             text-decoration: none;
@@ -48,186 +40,131 @@
             font-size: 1em;
             transition: color 0.3s;
         }
-
         nav a:hover {
             color: #ff4b2b;
         }
-
-        section {
-            padding: 2em;
-            max-width: 1200px;
-            margin: 2em auto;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
         .hero {
             text-align: center;
-            background: url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
+            background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
             color: white;
-            padding: 4em 0;
-        }
-
-        .hero h1 {
-            font-size: 3em;
-            margin-bottom: 0.5em;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-        }
-
-        .btn {
-            display: inline-block;
-            background: #ff4b2b;
-            color: white;
-            padding: 0.8em 1.5em;
-            border-radius: 5px;
-            text-decoration: none;
-            font-size: 1em;
-            margin-top: 1em;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #ff6c5b;
-        }
-
-        .timeline {
+            padding: 6em 1em;
             position: relative;
-            padding: 2em 0;
         }
-
-        .timeline::after {
+        .hero::before {
             content: '';
             position: absolute;
-            width: 4px;
-            background-color: #ff4b2b;
             top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -2px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
         }
-
-        .timeline-item {
+        .hero-content {
             position: relative;
-            margin: 1.5em 0;
-            padding: 1.2em;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 45%;
+            z-index: 1;
         }
-
-        .timeline-item:nth-child(odd) {
-            left: -50%;
-            transform: translateX(50%);
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .timeline-item h3 {
-            font-size: 1.2em;
-            margin-bottom: 0.5em;
-        }
-
-        .timeline-item p {
+        .hero h1 {
+            font-size: 4em;
             margin: 0;
-            font-size: 0.9em;
+            color: #fff;
         }
-
-        .timeline-item .icon {
-            width: 30px;
-            height: 30px;
+        .hero .btn {
+            display: inline-block;
+            padding: 1em 2em;
             background: #ff4b2b;
             color: white;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .hero .btn:hover {
+            background: #ff6c5b;
+        }
+        .about {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 2em;
+            background: #fff;
+            color: #333;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            gap: 2em;
         }
-
-        footer {
+        .about img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .about-content {
+            flex: 1;
+        }
+        .about-content h2 {
+            font-size: 2em;
+            color: #ff4b2b;
+            margin-bottom: 0.5em;
+        }
+        .about-content p {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #333;
+        }
+        .visitor-counter {
             text-align: center;
-            background: #333;
-            color: white;
-            padding: 1.5em 0;
+            margin: 2em 0;
+            font-size: 1.2em;
+            color: #ff4b2b;
         }
     </style>
 </head>
 <body>
-<header>
-    <h1>Devarsh Wali</h1>
-    <p>Product Manager | Innovator | Problem Solver</p>
-</header>
-<nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#education">Education</a>
-    <a href="#contact">Contact</a>
-</nav>
-<section class="hero">
-    <h1 id="typing-effect"></h1>
-    <p>Empowering businesses through innovative product management solutions.</p>
-    <a href="#contact" class="btn">Get In Touch</a>
-</section>
-<section id="education" class="timeline">
-    <h2>Education</h2>
-    <div class="timeline-item">
-        <div class="icon">🎓</div>
-        <h3>Master's Degree</h3>
-        <p>University of Maryland, Baltimore County</p>
-        <p>2024 - 2025</p>
+    <header>
+        <h1>Devarsh Wali</h1>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Devarsh Wali</h1>
+            <a href="#contact" class="btn">Want to Hire Me?</a>
+        </div>
+    </section>
+    <section id="about" class="about">
+        <img src="https://via.placeholder.com/300" alt="Profile Picture">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+                Currently pursuing my Master's degree at the University of Maryland, Baltimore County. Experienced as a Software Development Engineer and a member of R&D teams, responsible for analyzing new technologies for product enhancements. Developed websites using React.js, Angular, and Node.js. Written services using Node.js and Spring Boot.
+            </p>
+            <p>
+                Proficient in developing mobile apps using Flutter and ReactNative. Skilled in configuring Express and Node.js as middleware between React and Spring Boot to authenticate requests and responses using JWT tokens. Designed and developed UIs for large e-commerce applications, ensuring responsiveness and compatibility across platforms.
+            </p>
+        </div>
+    </section>
+    <div class="visitor-counter">
+        Visitors today: <span id="visitor-count">0</span>
     </div>
-    <div class="timeline-item">
-        <div class="icon">🎓</div>
-        <h3>Bachelor's Degree</h3>
-        <p>PVG's College of Engineering and Technology, Pune</p>
-        <p>2016 - 2021</p>
-    </div>
-</section>
-<footer>
-    <p>&copy; 2025 Devarsh Wali. All Rights Reserved.</p>
-</footer>
-<script>
-    const typingElement = document.getElementById('typing-effect');
-    const phrases = ["Hello, I'm Devarsh Wali", "Product Manager", "Innovator"];
-    let phraseIndex = 0;
-    let letterIndex = 0;
-    const typingSpeed = 150;
-    const erasingSpeed = 100;
-    const delayBetweenPhrases = 2000;
+    <script>
+        // Simulate fetching visitor count from a server
+        document.addEventListener('DOMContentLoaded', function() {
+            const visitorCountElement = document.getElementById('visitor-count');
+            // Simulate an API call
+            const visitorsToday = Math.floor(Math.random() * 100) + 1; // Random count for example purposes
+            visitorCountElement.textContent = visitorsToday;
 
-    function typePhrase() {
-        if (letterIndex < phrases[phraseIndex].length) {
-            typingElement.textContent += phrases[phraseIndex][letterIndex];
-            letterIndex++;
-            setTimeout(typePhrase, typingSpeed);
-        } else {
-            setTimeout(erasePhrase, delayBetweenPhrases);
-        }
-    }
-
-    function erasePhrase() {
-        if (letterIndex > 0) {
-            typingElement.textContent = phrases[phraseIndex].substring(0, letterIndex - 1);
-            letterIndex--;
-            setTimeout(erasePhrase, erasingSpeed);
-        } else {
-            phraseIndex = (phraseIndex + 1) % phrases.length;
-            setTimeout(typePhrase, typingSpeed);
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', typePhrase);
-</script>
+            // Add popup notification
+            setTimeout(() => {
+                alert(`Total Number Of Visitors Today: ${visitorsToday}`);
+            }, 500);
+        });
+    </script>
 </body>
 </html>
